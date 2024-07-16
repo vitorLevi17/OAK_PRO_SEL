@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Produtos</title>
+</head>
+<body>
+    <h1>Listagem de Produtos</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome do Produto</th>
+                <th>Valor do Produto</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produto in produtos %}
+            <tr>
+                <td>{{ produto.nome_produto }}</td>  <!-- Exibe o nome do produto -->
+                <td>{{ produto.valor_produto }}</td>  <!-- Exibe o valor do produto -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+     <a href="{{ url_for('cadastrar') }}">Cadastrar Novo Produto</a>
+</body>
+</html>

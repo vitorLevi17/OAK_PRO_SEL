@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produto</title>
+</head>
+<body>
+    <h1>Cadastro de Produto</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}  <!-- Renderiza o campo hidden_token para CSRF -->
+        <div>
+            {{ form.nome_produto.label }}  <!-- Rótulo do campo -->
+            {{ form.nome_produto(size=50) }}  <!-- Campo de texto -->
+            {% if form.nome_produto.errors %}
+                <ul class="errors">
+                    {% for error in form.nome_produto.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <div>
+            {{ form.descricao_produto.label }}
+            {{ form.descricao_produto(size=100) }}  <!-- Campo de texto para descrição -->
+            {% if form.descricao_produto.errors %}
+                <ul class="errors">
+                    {% for error in form.descricao_produto.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <div>
+            {{ form.valor_produto.label }}
+            {{ form.valor_produto() }}  <!-- Campo para o valor do produto -->
+            {% if form.valor_produto.errors %}
+                <ul class="errors">
+                    {% for error in form.valor_produto.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <div>
+            {{ form.disponivel_venda.label }}
+            {{ form.disponivel_venda() }}  <!-- Checkbox para disponibilidade -->
+            {% if form.disponivel_venda.errors %}
+                <ul class="errors">
+                    {% for error in form.disponivel_venda.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <div>
+            {{ form.submit() }}  <!-- Botão de envio do formulário -->
+        </div>
+    </form>
+</body>
+</html>
