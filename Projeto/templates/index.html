@@ -4,26 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listagem de Produtos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Listagem de Produtos</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Nome do Produto</th>
-                <th>Valor do Produto</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for produto in produtos %}
-            <tr>
-                <td>{{ produto.nome_produto }}</td>  <!-- Exibe o nome do produto -->
-                <td>{{ produto.valor_produto }}</td>  <!-- Exibe o valor do produto -->
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <br>
-     <a href="{{ url_for('cadastrar') }}">Cadastrar Novo Produto</a>
+    <div class="container mt-4">
+        <h1>Listagem de Produtos</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nome do Produto</th>
+                    <th>Valor do Produto</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for produto in produtos %}
+                <tr>
+                    <td>{{ produto.nome_produto }}</td>  <!-- Exibe o nome do produto -->
+                    <td>{{ produto.valor_produto }}</td>  <!-- Exibe o valor do produto -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <button class="btn btn-primary" onclick="location.href='{{ url_for('cadastrar') }}'">Cadastrar Novo Produto</button>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

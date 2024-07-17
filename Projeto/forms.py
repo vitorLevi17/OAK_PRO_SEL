@@ -9,7 +9,7 @@ class FormProduto(FlaskForm):
     descricao_produto = StringField("Descrição",validators=[DataRequired()])
     valor_produto = FloatField("Preço",validators=[DataRequired()])
     disponivel_venda = BooleanField("Disponível para venda")
-    bt = SubmitField,("Cadastrar")
+    submit = SubmitField("Cadastrar")
 
 
 
