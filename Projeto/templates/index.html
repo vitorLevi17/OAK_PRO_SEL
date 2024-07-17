@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listagem de Produtos</title>
-    <!-- Bootstrap CSS -->
+    <!-- Estilo do Bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -20,8 +20,8 @@
             <tbody>
                 {% for produto in produtos %}
                 <tr>
-                    <td>{{ produto.nome_produto }}</td>  <!-- Exibe o nome do produto -->
-                    <td>{{ produto.valor_produto }}</td>  <!-- Exibe o valor do produto -->
+                    <td>{{ produto.nome_produto }}</td>  <!-- Mostra o nome do produto -->
+                    <td>{{ produto.valor_produto }}</td>  <!-- Mostra o valor do produto -->
                 </tr>
                 {% endfor %}
             </tbody>
@@ -30,7 +30,7 @@
         <button class="btn btn-primary" onclick="location.href='{{ url_for('cadastrar') }}'">Cadastrar Novo Produto</button>
     </div>
 
-    <!-- Bootstrap JS and dependencies -->
+    <!--Bootstrap-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
